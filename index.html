@@ -19,6 +19,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="Develop/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -32,53 +35,77 @@
       <!-- Timeblocks go here -->
       <div class="row">
         <div class="col-1 hour">9 AM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <!-- <div textarea class="col-10 form-control timeBlock" aria-lebel="With textarea"></div> -->
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
       <div class="row">
         <div class="col-1 hour">10 AM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
       <div class="row">
         <div class="col-1 hour">11 AM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
       <div class="row">
         <div class="col-1 hour">12 PM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
       <div class="row">
         <div class="col-1 hour">1 PM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
       <div class="row">
         <div class="col-1 hour">2 PM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
       <div class="row">
         <div class="col-1 hour">3 PM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
       <div class="row">
         <div class="col-1 hour">4 PM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
       <div class="row">
         <div class="col-1 hour">5 PM</div>
-        <div class="col-10 timeBlock"></div>
-        <div class="col-1 saveBtn">save</div>
+        <textarea class="col-10 form-control timeBlock" aria-label="With textarea"></textarea>
+        <div class="col-1 saveBtn"><i class="far fa-save"></i></div>
       </div>
     </div>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // Get day of the week through Moment.js
+        const m = moment();
+        $("#currentDay").text(m.format("dddd"));
+        console.log(m.format("dddd"));
+        
+        // Save button function
+        $(".saveBtn").on("click", function() {
+
+          var blockContent = $(".timeBlock").val();
+          // for (var i=0; i < 9; i++) {
+          //   $(".slot"+[i]).
+          // }
+          localStorage.setItem("blockContent", blockContent);
+        })
+        $(".timeBlock").text(localStorage.getItem("blockContent"));
+
+        // Coloring timeBlock dependent on time.
+        // Use .attr("") to set .past .present and .future
+        
+
+      })
+    </script>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
   </body>
 </html>
