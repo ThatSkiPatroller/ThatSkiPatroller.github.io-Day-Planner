@@ -108,60 +108,103 @@
         console.log(currentHour);
         function getHour() {
           if (currentHour == 9) {
-            console.log("it's nine")
-            $("slot1").attr("present");
+            $(".slot1").addClass("present");
+            $(".slot2").addClass("future");
+            $(".slot3").addClass("future");
+            $(".slot4").addClass("future");
+            $(".slot5").addClass("future");
+            $(".slot6").addClass("future");
+            $(".slot7").addClass("future");
+            $(".slot8").addClass("future");
+            $(".slot9").addClass("future");
           } else if (currentHour == 10) {
-            $("slot2").attr("present");
-            $("slot1").attr("past");
-            console.log("it's ten")
+            $(".slot1").addClass("past");
+            $(".slot2").addClass("present");
+            $(".slot3").addClass("future");
+            $(".slot4").addClass("future");
+            $(".slot5").addClass("future");
+            $(".slot6").addClass("future");
+            $(".slot7").addClass("future");
+            $(".slot8").addClass("future");
+            $(".slot9").addClass("future");
           } else if (currentHour == 11) {
-            $("slot3").attr("present");
-            $("slot2").attr("past");
-            $("slot1").attr("past");
-            console.log("it's eleven")
+            $(".slot1").addClass("past");
+            $(".slot2").addClass("past");
+            $(".slot3").addClass("present");
+            $(".slot4").addClass("future");
+            $(".slot5").addClass("future");
+            $(".slot6").addClass("future");
+            $(".slot7").addClass("future");
+            $(".slot8").addClass("future");
+            $(".slot9").addClass("future");
           } else if (currentHour == 12) {
-            $("slot4").attr("present");
-            $("slot3").attr("past");
-            $("slot2").attr("past");
-            $("slot1").attr("past");
-            console.log("it's twelve")
+            $(".slot1").addClass("past");
+            $(".slot2").addClass("past");
+            $(".slot3").addClass("past");
+            $(".slot4").addClass("present");
+            $(".slot5").addClass("future");
+            $(".slot6").addClass("future");
+            $(".slot7").addClass("future");
+            $(".slot8").addClass("future");
+            $(".slot9").addClass("future");
           } else if (currentHour == 1) {
-            $("slot4").attr("present");
-            $("slot3").attr("past");
-            $("slot2").attr("past");
-            $("slot1").attr("past");
+            $(".slot1").addClass("past");
+            $(".slot2").addClass("past");
+            $(".slot3").addClass("past");
+            $(".slot4").addClass("past");
+            $(".slot5").addClass("present");
+            $(".slot6").addClass("future");
+            $(".slot7").addClass("future");
+            $(".slot8").addClass("future");
+            $(".slot9").addClass("future");
             console.log("it's one")
           } else if (currentHour == 2) {
-            $("slot4").attr("present");
-            $("slot3").attr("past");
-            $("slot2").attr("past");
-            $("slot1").attr("past");
-            console.log("it's two");
+            $(".slot1").addClass("past");
+            $(".slot2").addClass("past");
+            $(".slot3").addClass("past");
+            $(".slot4").addClass("past");
+            $(".slot5").addClass("past");
+            $(".slot6").addClass("present");
+            $(".slot7").addClass("future");
+            $(".slot8").addClass("future");
+            $(".slot9").addClass("future");
           } else if (currentHour == 3) {
-            $("slot4").attr("present");
-            $("slot3").attr("past");
-            $("slot2").attr("past");
-            $("slot1").attr("past");
-            console.log("its three")
+            $(".slot1").addClass("past");
+            $(".slot2").addClass("past");
+            $(".slot3").addClass("past");
+            $(".slot4").addClass("past");
+            $(".slot5").addClass("past");
+            $(".slot6").addClass("past");
+            $(".slot7").addClass("present");
+            $(".slot8").addClass("future");
+            $(".slot9").addClass("future");
           } else if (currentHour == 4) {
-            $("slot4").attr("present");
-            $("slot3").attr("past");
-            $("slot2").attr("past");
-            $("slot1").attr("past");
-            console.log("its four")
+            $(".slot1").addClass("past");
+            $(".slot2").addClass("past");
+            $(".slot3").addClass("past");
+            $(".slot4").addClass("past");
+            $(".slot5").addClass("past");
+            $(".slot6").addClass("past");
+            $(".slot7").addClass("past");
+            $(".slot8").addClass("present");
+            $(".slot9").addClass("future");
           } else if (currentHour == 5) {
-            $("slot4").attr("present");
-            $("slot3").attr("past");
-            $("slot2").attr("past");
-            $("slot1").attr("past");
-            console.log("it's five")
+            $(".slot1").addClass("past");
+            $(".slot2").addClass("past");
+            $(".slot3").addClass("past");
+            $(".slot4").addClass("past");
+            $(".slot5").addClass("past");
+            $(".slot6").addClass("past");
+            $(".slot7").addClass("past");
+            $(".slot8").addClass("past");
+            $(".slot9").addClass("present");
           } else {
             $("container").attr("past");
           };
         };
 
-        getHour();
-      })
+        getHour(currentHour);
+      });
     </script>
     
     
